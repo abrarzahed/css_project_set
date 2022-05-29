@@ -1,0 +1,42 @@
+.sandbox.img-menipulation img {
+  transition: all 0.3s ease;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  outline: 5px solid teal;
+  outline-offset: 5px;
+
+  &:hover {
+    cursor: crosshair;
+  }
+}
+.grayscale {
+  filter: grayscale(1);
+  &:hover {
+    filter: grayscale(0);
+  }
+}
+.blur {
+  filter: blur(3px);
+  &:hover {
+    filter: blur(0);
+  }
+}
+.invert {
+  filter: invert(1);
+  &:hover {
+    filter: invert(0);
+  }
+}
+.sepia {
+  filter: sepia(1);
+  &:hover {
+    filter: sepia(0);
+  }
+}
+.saturate {
+  filter: saturate(0);
+  &:hover {
+    filter: saturate(1);
+  }
+}

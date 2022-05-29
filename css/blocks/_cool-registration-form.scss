@@ -1,0 +1,102 @@
+.register-wrapper {
+  background-image: linear-gradient(135deg, #0eeff0 30%, #088790 90%);
+  position: relative;
+  z-index: 3;
+  padding: 10%;
+  color: #777;
+  border-radius: 8px;
+  font-size: 1rem;
+  * {
+    box-sizing: border-box;
+  }
+  .register-block {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    &:hover {
+      &::before {
+        transform: scale(0.96) translate(0, 16px);
+        z-index: -1;
+      }
+      &::after {
+        transform: scale(0.92) translate(0, 32px);
+        z-index: -2;
+      }
+    }
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: 100%;
+      content: "";
+      background: #fff;
+      border: solid 1px #e6e6e6;
+      border-radius: 5px;
+      transform: scale(0.9) translate(0, 0);
+      transition: all.3s ease;
+    }
+    &::after {
+      transition-delay: 0.08s;
+    }
+    .register-title {
+      font-size: 1.8rem;
+      padding-bottom: 20px;
+      border-bottom: dashed 1px #e6e6e6;
+    }
+    form {
+      input {
+        display: block;
+        width: 100%;
+        padding: 0 20px;
+        height: 50px;
+        background: #fff;
+        border: solid 1px #e6e6e6;
+        border-bottom-width: 3px;
+        border-radius: 5px;
+        transition: all ease 0.3s;
+        outline: none;
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+        &[type="email"]:focus,
+        &[type="email"]:active,
+        &[type="password"]:focus,
+        &[type="password"]:active {
+          border-color: #00b350;
+        }
+        &[type="submit"] {
+          position: relative;
+          display: block;
+          z-index: 1;
+          padding: 0 20px;
+          background-color: #f2395a;
+          background-size: 20px 20px;
+          color: #fff;
+          font-weight: bolder;
+          cursor: pointer;
+          background-image: repeating-radial-gradient(
+              circle at 0 0,
+              transparent 0,
+              #fd5574 10px
+            ),
+            repeating-linear-gradient(#f2395a55, #f2395a);
+          border: solid 1px #f02146;
+          border-bottom-width: 3px;
+          transition: all 0.3s ease;
+          &:hover {
+            background-size: 40px 40px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,104 @@
+.animation-bar-1 {
+  position: relative;
+  display: block;
+  padding: 2px;
+  font-size: 16px;
+  line-height: 16px;
+  border-radius: 30px;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25),
+    0 1px rgba(247, 247, 247, 0.8);
+  overflow: hidden;
+
+  span {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    border-radius: 10px 0 0 10px;
+    background: #f56982;
+    background-size: 100%;
+    background-image: linear-gradient(to bottom, #f2395a, #b90c2b);
+    animation: progressBar1 4s infinite ease-in-out alternate;
+
+    &::after {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background-size: 100%;
+      background-image: repeating-radial-gradient(
+          circle at 0 0,
+          transparent 0,
+          #e5e5f7 10px
+        ),
+        repeating-linear-gradient(#f2395a55, #f2395a);
+      background-size: 50%;
+      opacity: 0.3;
+    }
+  }
+}
+@keyframes progressBar1 {
+  from {
+    width: 0%;
+    background-size: 50%;
+  }
+  to {
+    background-size: 150%;
+    width: 90%;
+  }
+}
+.animation-bar-2 {
+  margin-top: 30px;
+  position: relative;
+  display: block;
+  font-size: 16px;
+  line-height: 1;
+  background: rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.25),
+    0 1px rgba(247, 247, 247, 0.8);
+  span {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    height: 20px;
+    background-color: #00e6e7;
+    background-size: 100%;
+    background-image: linear-gradient(to bottom, #00b3b4, #008081);
+    animation: progressBar2 4s infinite ease-in-out alternate;
+    animation-delay: 0.4s;
+    &::before {
+      position: absolute;
+      content: "";
+      right: 0;
+      bottom: 100%;
+      height: 0;
+      width: 0;
+      border: 10px solid transparent;
+      border-right-width: 0;
+      border-bottom-width: 0;
+      border-top-color: rgba(0, 0, 0, 0.781);
+    }
+    &::after {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      bottom: calc(100% + 5px);
+      content: attr(data-label);
+      padding: 5px;
+      border-radius: 3px;
+      font-size: 0.8em;
+      background: rgba(0, 0, 0, 0.781);
+      z-index: 1;
+      color: #eee;
+    }
+  }
+}
+@keyframes progressBar2 {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
